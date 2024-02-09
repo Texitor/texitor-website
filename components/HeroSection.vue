@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
-// import { Dialog, DialogPanel } from "@headlessui/vue";
+
+const colorMode = useColorMode();
+const isDark = computed(() => colorMode.value === "dark");
 
 const navigation = [
   { name: "Home", href: "#" },
@@ -13,7 +15,7 @@ const mobileMenuOpen = ref(false);
 </script>
 
 <template>
-  <div class="bg-white">
+  <div class="bg-white dark:bg-gray-900">
     <header class="absolute inset-x-0 top-0 z-50">
       <nav
         class="flex items-center justify-between p-6 lg:px-8"
@@ -28,7 +30,7 @@ const mobileMenuOpen = ref(false);
         <div class="flex lg:hidden">
           <button
             type="button"
-            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-400"
             @click="mobileMenuOpen = true"
           >
             <span class="sr-only">Open main menu</span>
@@ -44,7 +46,7 @@ const mobileMenuOpen = ref(false);
             v-for="item in navigation"
             :key="item.name"
             :href="item.href"
-            class="text-sm font-semibold leading-6 text-gray-900"
+            class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
             >{{ item.name }}</a
           >
         </div>
@@ -63,7 +65,7 @@ const mobileMenuOpen = ref(false);
             </a>
             <button
               type="button"
-              class="-m-2.5 rounded-md p-2.5 text-gray-700"
+              class="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-gray-400"
               @click="mobileMenuOpen = false"
             >
               <span class="sr-only">Close menu</span>
@@ -75,20 +77,22 @@ const mobileMenuOpen = ref(false);
             </button>
           </div>
           <div class="mt-6 flow-root">
-            <div class="-my-6 divide-y divide-gray-500/10">
+            <div
+              class="-my-6 divide-y divide-gray-500/10 dark:divide-gray-500/25"
+            >
               <div class="space-y-2 py-6">
                 <a
                   v-for="item in navigation"
                   :key="item.name"
                   :href="item.href"
-                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800"
                   >{{ item.name }}</a
                 >
               </div>
               <div class="py-6">
                 <a
                   href="#"
-                  class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800"
                   >Download</a
                 >
               </div>
@@ -104,7 +108,7 @@ const mobileMenuOpen = ref(false);
         aria-hidden="true"
       >
         <div
-          class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+          class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] dark:from-[#ff80b5] dark:to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
           style="
             clip-path: polygon(
               74.1% 44.1%,
@@ -131,11 +135,12 @@ const mobileMenuOpen = ref(false);
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mx-auto max-w-2xl text-center">
             <h1
-              class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
+              class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl"
             >
               Own your papers.
             </h1>
-            <p class="mt-6 text-lg leading-8 text-gray-600">
+            <ThemeSwitch class="m-20 z-50" />
+            <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
               Texitor is a free and modern LaTeX editor for Windows, macOS and
               Linux.
             </p>
@@ -154,13 +159,15 @@ const mobileMenuOpen = ref(false);
             <div
               class="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4"
             >
-              <img
-                src="/hero.png"
-                alt="App screenshot"
-                width="2432"
-                height="1442"
-                class="rounded-md shadow-2xl ring-1 ring-gray-900/10"
-              />
+              <ClientOnly>
+                <img
+                  :src="isDark ? '/hero-dark.png' : '/hero.png'"
+                  alt="App screenshot"
+                  width="2432"
+                  height="1442"
+                  class="rounded-md shadow-2xl ring-1 ring-gray-900/10"
+                />
+              </ClientOnly>
             </div>
           </div>
         </div>
