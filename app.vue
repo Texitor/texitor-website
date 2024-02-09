@@ -1,12 +1,9 @@
 <template>
   <div>
-    <!-- <NavBar /> -->
     <HeroSection />
+    <AboutSection />
     <FeatureSection />
     <FaqSection />
     <FooterSection />
-    <!-- <About />
-    <Faq />
-    <BasicFooter /> -->
   </div>
 </template>

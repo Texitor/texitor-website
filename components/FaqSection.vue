@@ -2,11 +2,34 @@
 const faqs = [
   {
     id: 1,
-    question: "What's the best thing about Switzerland?",
+    question: "Can i use Texitor at work or school?",
     answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+      "Yes! Texitor is free to use for both personal and commercial use. You can use it at work or school without any restrictions!",
   },
-  // More questions...
+  {
+    id: 2,
+    question: "How is Texitor so fast?",
+    answer:
+      "Texitor was built using low-level technologies like Rust. This means that Texitor is blazing fast and lightweight!",
+  },
+  {
+    id: 3,
+    question: "Why not web-based?",
+    answer:
+      "Texitor runs locally on your computer. This means that your data is not sent to any server and you can use it offline. You'll also see lightning-fast performance!",
+  },
+  {
+    id: 4,
+    question: "How do I update Texitor?",
+    answer:
+      "Texitor supports auto updates. You will be notified when a new version is available!",
+  },
+  {
+    id: 5,
+    question: "Is Texitor hard to setup?",
+    answer:
+      "Texitor is designed to be as seamless as possible to set up. You can download it and start using it in less than 5 minutes!",
+  },
 ];
 </script>
 

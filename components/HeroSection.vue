@@ -1,5 +1,26 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
+
+const platform = ref();
+const appVersion = "0.0.3";
+
+onMounted(() => {
+  platform.value = navigator.userAgent.includes("Mac OS X")
+    ? "macOS"
+    : navigator.userAgent.includes("Windows")
+    ? "Windows"
+    : "Linux";
+});
+
+const getDownloadUrl = () => {
+  if (platform.value === "macOS") {
+    return `https://github.com/ali-shahwali/texitor-releases/releases/download/v${appVersion}/Texitor_${appVersion}_x64.dmg`;
+  } else if (platform.value === "Windows") {
+    return `https://github.com/ali-shahwali/texitor-releases/releases/download/v${appVersion}/Texitor_${appVersion}_x64-setup.exe`;
+  } else if (platform.value === "Linux") {
+    return `https://github.com/ali-shahwali/texitor-releases/releases/download/v${appVersion}/texitor_${appVersion}_amd64.deb`;
+  }
+};
 
 const colorMode = useColorMode();
 const isDark = computed(() => colorMode.value === "dark");
@@ -8,7 +29,7 @@ const navigation = [
   { name: "Home", href: "#" },
   { name: "Features", href: "#features" },
   { name: "FAQ", href: "#faqs" },
-  { name: "Docs", href: "#" },
+  { name: "Guide", href: "#" },
 ];
 
 const mobileMenuOpen = ref(false);
@@ -51,10 +72,13 @@ const mobileMenuOpen = ref(false);
           >
         </div>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a
-            href="#"
-            class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
-            >Download <span aria-hidden="true">&rarr;</span></a
+          <UButton
+            :to="getDownloadUrl()"
+            download
+            variant="link"
+            color="black"
+            icon="i-heroicons-cloud-arrow-down"
+            >Download</UButton
           >
         </div>
       </nav>
@@ -93,7 +117,8 @@ const mobileMenuOpen = ref(false);
               </div>
               <div class="py-6">
                 <a
-                  href="#"
+                  :href="getDownloadUrl()"
+                  Download
                   class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800"
                   >Download</a
                 >
@@ -146,15 +171,26 @@ const mobileMenuOpen = ref(false);
               Linux.
             </p>
             <div class="mt-10 flex items-center justify-center gap-x-6">
-              <a
-                href="#"
-                class="rounded-md bg-indigo-600 dark:bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 dark:hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >Download</a
+              <UButton
+                v-if="platform"
+                class="rounded-md bg-indigo-600 dark:bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold !text-white shadow-sm hover:bg-indigo-500 dark:hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                :to="getDownloadUrl()"
+                download
+              >
+                Download</UButton
               >
               <a
                 href="#features"
                 class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
                 >Learn more <span aria-hidden="true">→</span></a
+              >
+            </div>
+            <div class="mt-4">
+              <UBadge
+                color="gray"
+                variant="subtle"
+                :ui="{ rounded: 'rounded-full' }"
+                >v{{ appVersion }} out now!</UBadge
               >
             </div>
           </div>
