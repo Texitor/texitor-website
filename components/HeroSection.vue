@@ -6,8 +6,8 @@ const isDark = computed(() => colorMode.value === "dark");
 
 const navigation = [
   { name: "Home", href: "#" },
-  { name: "About", href: "#" },
-  { name: "FAQ", href: "#" },
+  { name: "Features", href: "#features" },
+  { name: "FAQ", href: "#faqs" },
   { name: "Docs", href: "#" },
 ];
 
@@ -15,7 +15,7 @@ const mobileMenuOpen = ref(false);
 </script>
 
 <template>
-  <div class="bg-white dark:bg-gray-900">
+  <div id="home" class="bg-white dark:bg-gray-900">
     <header class="absolute inset-x-0 top-0 z-50">
       <nav
         class="flex items-center justify-between p-6 lg:px-8"
@@ -51,7 +51,9 @@ const mobileMenuOpen = ref(false);
           >
         </div>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
+          <a
+            href="#"
+            class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
             >Download <span aria-hidden="true">&rarr;</span></a
           >
         </div>
@@ -139,7 +141,6 @@ const mobileMenuOpen = ref(false);
             >
               Own your papers.
             </h1>
-            <ThemeSwitch class="m-20 z-50" />
             <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
               Texitor is a free and modern LaTeX editor for Windows, macOS and
               Linux.
@@ -147,12 +148,14 @@ const mobileMenuOpen = ref(false);
             <div class="mt-10 flex items-center justify-center gap-x-6">
               <a
                 href="#"
-                class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                class="rounded-md bg-indigo-600 dark:bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 dark:hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >Download</a
               >
-              <!-- <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
+              <a
+                href="#features"
+                class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
                 >Learn more <span aria-hidden="true">→</span></a
-              > -->
+              >
             </div>
           </div>
           <div class="mt-16 flow-root sm:mt-24">
