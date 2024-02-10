@@ -1,8 +1,41 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 
+interface ReleaseResponse {
+  version: string;
+  notes: string;
+  pub_date: string;
+  platforms: {
+    "darwin-x86_64"?: {
+      signature: string;
+      url: string;
+    };
+    "darwin-aarch64"?: {
+      signature: string;
+      url: string;
+    };
+    "linux-x86_64"?: {
+      signature: string;
+      url: string;
+    };
+    "windows-x86_64"?: {
+      signature: string;
+      url: string;
+    };
+  };
+}
+
+const { data: latestRelease } = useFetch<ReleaseResponse>(
+  // platform and arch can be whatever
+  "https://texitor-releases.fly.dev/windows/x86_64",
+  {
+    parseResponse(res) {
+      return JSON.parse(res);
+    },
+  }
+);
+
 const platform = ref();
-const appVersion = "0.0.3";
 
 onMounted(() => {
   platform.value = navigator.userAgent.includes("Mac OS X")
@@ -14,11 +47,11 @@ onMounted(() => {
 
 const getDownloadUrl = () => {
   if (platform.value === "macOS") {
-    return `https://github.com/ali-shahwali/texitor-releases/releases/download/v${appVersion}/Texitor_${appVersion}_x64.dmg`;
+    return latestRelease.value?.platforms["darwin-x86_64"]?.url;
   } else if (platform.value === "Windows") {
-    return `https://github.com/ali-shahwali/texitor-releases/releases/download/v${appVersion}/Texitor_${appVersion}_x64-setup.exe`;
+    return latestRelease.value?.platforms["windows-x86_64"]?.url;
   } else if (platform.value === "Linux") {
-    return `https://github.com/ali-shahwali/texitor-releases/releases/download/v${appVersion}/texitor_${appVersion}_amd64.deb`;
+    return latestRelease.value?.platforms["linux-x86_64"]?.url;
   }
 };
 
@@ -187,10 +220,11 @@ const mobileMenuOpen = ref(false);
             </div>
             <div class="mt-4">
               <UBadge
+                v-if="latestRelease"
                 color="gray"
                 variant="subtle"
                 :ui="{ rounded: 'rounded-full' }"
-                >v{{ appVersion }} out now!</UBadge
+                >v{{ latestRelease.version }} out now!</UBadge
               >
             </div>
           </div>
