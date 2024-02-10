@@ -4,7 +4,7 @@ import { defineComponent, h } from "vue";
 const navigation = [
   {
     name: "GitHub",
-    href: "https://github.com/ali-shahwali/texitor-releases/releases",
+    href: "https://github.com/Texitor/texitor-releases/releases",
     icon: defineComponent({
       render: () =>
         h("svg", { fill: "currentColor", viewBox: "0 0 24 24" }, [
