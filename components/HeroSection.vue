@@ -46,12 +46,14 @@ onMounted(() => {
 });
 
 const getDownloadUrl = () => {
+  const version = latestRelease.value?.version;
+  const baseUrl = `https://github.com/ali-shahwali/texitor-releases/releases/download/v${version}`;
   if (platform.value === "macOS") {
-    return latestRelease.value?.platforms["darwin-x86_64"]?.url;
+    return `${baseUrl}/Texitor_${version}_x64.dmg`;
   } else if (platform.value === "Windows") {
-    return latestRelease.value?.platforms["windows-x86_64"]?.url;
+    return `${baseUrl}/Texitor_${version}_x64-setup.exe`;
   } else if (platform.value === "Linux") {
-    return latestRelease.value?.platforms["linux-x86_64"]?.url;
+    return `${baseUrl}/texitor_${version}_amd64.AppImage`;
   }
 };
 
