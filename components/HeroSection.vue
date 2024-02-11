@@ -64,7 +64,7 @@ const navigation = [
   { name: "Home", href: "#" },
   { name: "Features", href: "#features" },
   { name: "FAQ", href: "#faqs" },
-  { name: "Guide", href: "#" },
+  // { name: "Guide", href: "#" },
 ];
 
 const mobileMenuOpen = ref(false);

@@ -1,28 +1,28 @@
 <script setup lang="ts">
 const features = [
   {
-    name: "Push to deploy",
+    name: "Fast compilation",
     description:
-      "Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.",
-    icon: "i-heroicons-cloud-arrow-up",
+      "Built from the ground up to be fast and efficient. Texitor compiles your documents as fast as possible.",
+    icon: "i-heroicons-bolt",
   },
   {
-    name: "SSL certificates",
+    name: "Secure documents",
     description:
-      "Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.",
+      "Documents you edit using Texitor are secure and private. We don't store any of your documents on our servers.",
     icon: "i-heroicons-lock-closed",
   },
   {
-    name: "Simple queues",
+    name: "Customizable themes",
     description:
-      "Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.",
-    icon: "i-heroicons-arrow-path",
+      "Choose from a variety of themes to make writing LaTeX more enjoyable.",
+    icon: "i-heroicons-paint-brush",
   },
   {
-    name: "Advanced security",
+    name: "Easy to use",
     description:
-      "Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.",
-    icon: "i-heroicons-finger-print",
+      "Texitor is designed to be easy to use and intuitive. You can start writing LaTeX documents in no time.",
+    icon: "i-heroicons-cursor-arrow-rays",
   },
 ];
 </script>
@@ -39,12 +39,12 @@ const features = [
         <p
           class="mt-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
         >
-          Everything you need to deploy your app
+          A dedicated LaTeX editor that puts you in control
         </p>
         <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
-          Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
-          Suspendisse eget egestas a elementum pulvinar et feugiat blandit at.
-          In mi viverra elit nunc.
+          Texitor aims to provide a simple and intuitive interface for writing
+          LaTeX documents. It's a powerful tool that allows you to focus on
+          writing and compiling your projects quickly.
         </p>
       </div>
       <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
