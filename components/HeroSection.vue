@@ -252,6 +252,15 @@ const handlePostDownload = () => {
                   height="1442"
                   class="rounded-md shadow-2xl ring-1 ring-gray-900/10"
                 />
+                <template #fallback>
+                  <img
+                    src="/hero.webp"
+                    alt="App screenshot"
+                    width="2432"
+                    height="1442"
+                    class="rounded-md shadow-2xl ring-1 ring-gray-900/10"
+                  />
+                </template>
               </ClientOnly>
             </div>
           </div>
