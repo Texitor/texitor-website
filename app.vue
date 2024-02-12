@@ -1,10 +1,6 @@
 <template>
   <div>
-    <HeroSection />
-    <AboutSection />
-    <FeatureSection />
-    <FaqSection />
-    <FooterSection />
+    <NuxtPage />
   </div>
 </template>
 

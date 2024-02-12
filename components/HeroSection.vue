@@ -68,6 +68,12 @@ const navigation = [
 ];
 
 const mobileMenuOpen = ref(false);
+
+const handlePostDownload = () => {
+  setTimeout(() => {
+    window.location.href = "/postdownload";
+  }, 1000);
+};
 </script>
 
 <template>
@@ -109,6 +115,7 @@ const mobileMenuOpen = ref(false);
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
           <UButton
             :to="getDownloadUrl()"
+            @click="handlePostDownload"
             download
             variant="link"
             color="black"
@@ -153,6 +160,7 @@ const mobileMenuOpen = ref(false);
               <div class="py-6">
                 <a
                   :href="getDownloadUrl()"
+                  @click="handlePostDownload"
                   Download
                   class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800"
                   >Download</a
@@ -210,6 +218,7 @@ const mobileMenuOpen = ref(false);
                 v-if="platform"
                 class="rounded-md bg-indigo-600 dark:bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold !text-white shadow-sm hover:bg-indigo-500 dark:hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 :to="getDownloadUrl()"
+                @click="handlePostDownload"
                 download
               >
                 Download</UButton
