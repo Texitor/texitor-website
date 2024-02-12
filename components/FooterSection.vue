@@ -29,7 +29,7 @@ const navigation = [
           v-for="item in navigation"
           :key="item.name"
           :href="item.href"
-          class="text-gray-400 hover:text-gray-500"
+          class="text-gray-500 dark:text-gray-300 hover:text-gray-400 hover:dark:text-gray-300"
         >
           <span class="sr-only">{{ item.name }}</span>
           <component :is="item.icon" class="h-6 w-6" aria-hidden="true" />
@@ -37,7 +37,9 @@ const navigation = [
         <ThemeSwitch class="m-20 z-50" />
       </div>
       <div class="mt-8 md:order-1 md:mt-0">
-        <p class="text-center text-xs leading-5 text-gray-500">
+        <p
+          class="text-center text-xs leading-5 text-gray-500 dark:text-gray-300"
+        >
           &copy; 2024 Texitor. All rights reserved.
         </p>
       </div>
