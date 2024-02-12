@@ -86,7 +86,12 @@ const handlePostDownload = () => {
         <div class="flex lg:flex-1">
           <a href="#" class="-m-1.5 p-1.5">
             <span class="sr-only">Texitor</span>
-            <img height="32" width="32" src="/logo.png" alt="Texitor Logo" />
+            <NuxtImg
+              height="32"
+              width="32"
+              src="/logo.png"
+              alt="Texitor Logo"
+            />
           </a>
         </div>
         <div class="flex lg:hidden">
@@ -129,7 +134,12 @@ const handlePostDownload = () => {
           <div class="flex items-center justify-between">
             <a href="#" class="-m-1.5 p-1.5">
               <span class="sr-only">Texitor</span>
-              <img height="32" width="32" src="/logo.png" alt="Texitor Logo" />
+              <NuxtImg
+                height="32"
+                width="32"
+                src="/logo.png"
+                alt="Texitor Logo"
+              />
             </a>
             <button
               type="button"
@@ -244,15 +254,13 @@ const handlePostDownload = () => {
             <div
               class="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4"
             >
-              <ClientOnly>
-                <img
-                  :src="isDark ? '/hero-dark.png' : '/hero.png'"
-                  alt="App screenshot"
-                  width="2432"
-                  height="1442"
-                  class="rounded-md shadow-2xl ring-1 ring-gray-900/10"
-                />
-              </ClientOnly>
+              <NuxtImg
+                :src="isDark ? '/hero-dark.png' : '/hero.png'"
+                alt="App screenshot"
+                width="2432"
+                height="1442"
+                class="rounded-md shadow-2xl ring-1 ring-gray-900/10"
+              />
             </div>
           </div>
         </div>

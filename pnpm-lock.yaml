@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@nuxt/image':
-    specifier: ^1.3.0
-    version: 1.3.0
+    specifier: npm:@nuxt/image-edge@latest
+    version: /@nuxt/image-edge@1.3.0-28452769.547f442
   '@nuxt/ui':
     specifier: ^2.13.0
     version: 2.13.0(nuxt@3.10.1)(vite@5.1.1)(vue@3.4.18)
@@ -1428,8 +1428,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@nuxt/image@1.3.0:
-    resolution: {integrity: sha512-HoAvBImqRrAwCLhZe7IsRwUWvV0ZVqUKFE/GsT8Jo01NBEd+PXhhu2XgHKV+aasqPXdeaQjhL43CSIwuNEwG1w==}
+  /@nuxt/image-edge@1.3.0-28452769.547f442:
+    resolution: {integrity: sha512-EENL7we7l7Hg+dKgK/80XEXFes8fjfHRmhWuVt2xeGI/zev/HApEFvlN5QlwHfMTP99zWEj3rbHaeiu0p8sPrA==}
     engines: {node: ^14.16.0 || >=16.11.0}
     dependencies:
       '@nuxt/kit': 3.10.1
@@ -1770,6 +1770,7 @@ packages:
     dependencies:
       is-glob: 4.0.3
       micromatch: 4.0.5
+      napi-wasm: 1.1.0
     dev: false
     bundledDependencies:
       - napi-wasm
@@ -4968,6 +4969,10 @@ packages:
     resolution: {integrity: sha512-7ZtY5KTCNheRGfEFxnedV5zFiORN1+Y1N6zvPTnHQd8ENUvfaDBeuJDZb2bN/oXwXxu3qkTXDzy57W5vAmDTBw==}
     engines: {node: ^14 || ^16 || >=18}
     hasBin: true
+    dev: false
+
+  /napi-wasm@1.1.0:
+    resolution: {integrity: sha512-lHwIAJbmLSjF9VDRm9GoVOy9AGp3aIvkjv+Kvz9h16QR3uSVYH78PNQUnT2U4X53mhlnV2M7wrhibQ3GHicDmg==}
     dev: false
 
   /negotiator@0.6.3:
