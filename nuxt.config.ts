@@ -18,6 +18,14 @@ export default defineNuxtConfig({
         },
         { name: "author", content: "Texitor" },
       ],
+      script: [
+        {
+          src: "https://static.cloudflareinsights.com/beacon.min.js",
+          defer: true,
+          tagPosition: "bodyClose",
+          "data-cf-beacon": '{"token": "5177a72985c846338aad3014ec801418"}',
+        },
+      ],
     },
   },
 });
