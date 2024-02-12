@@ -19,7 +19,7 @@ onMounted(() => {
         class="mx-auto"
         height="48"
         width="48"
-        src="/logo.png"
+        src="/logo.webp"
         alt="Texitor Logo"
       />
       <div class="mx-auto mt-20 max-w-2xl text-center sm:mt-24">
@@ -45,9 +45,9 @@ onMounted(() => {
             >
               Steps for downloading on Windows:
             </h2>
-            <img src="/WinStep1.png" alt="Step 1" />
-            <img src="/WinStep2.png" alt="Step 2" />
-            <img src="/WinStep3.png" alt="Step 3" />
+            <img src="/WinStep1.webp" alt="Step 1" />
+            <img src="/WinStep2.webp" alt="Step 2" />
+            <img src="/WinStep3.webp" alt="Step 3" />
           </div>
           <div
             v-else-if="platform === 'macOS'"
@@ -58,8 +58,8 @@ onMounted(() => {
             >
               Steps for downloading on MacOS:
             </h2>
-            <img src="/MacStep1.png" alt="Step 1" />
-            <img src="/MacStep2.png" alt="Step 2" />
+            <img src="/MacStep1.webp" alt="Step 1" />
+            <img src="/MacStep2.webp" alt="Step 2" />
           </div>
         </ClientOnly>
 
