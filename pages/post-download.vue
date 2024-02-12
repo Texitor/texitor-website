@@ -15,10 +15,10 @@ onMounted(() => {
 <template>
   <div class="bg-white min-h-screen">
     <main class="mx-auto w-full max-w-7xl px-6 pb-16 pt-10 sm:pb-24 lg:px-8">
-      <img
-        class="mx-auto sm:h-12"
-        height="32"
-        width="32"
+      <NuxtImg
+        class="mx-auto"
+        height="48"
+        width="48"
         src="/logo.png"
         alt="Texitor Logo"
       />
@@ -45,9 +45,9 @@ onMounted(() => {
             >
               Steps for downloading on Windows:
             </h2>
-            <img src="/WinStep1.png" alt="Step 1" />
-            <img src="/WinStep2.png" alt="Step 2" />
-            <img src="/WinStep3.png" alt="Step 3" />
+            <NuxtImg src="/WinStep1.png" alt="Step 1" />
+            <NuxtImg src="/WinStep2.png" alt="Step 2" />
+            <NuxtImg src="/WinStep3.png" alt="Step 3" />
           </div>
           <div
             v-else-if="platform === 'macOS'"
@@ -58,8 +58,8 @@ onMounted(() => {
             >
               Steps for downloading on MacOS:
             </h2>
-            <img src="/MacStep1.png" alt="Step 1" />
-            <img src="/MacStep2.png" alt="Step 2" />
+            <NuxtImg src="/MacStep1.png" alt="Step 1" />
+            <NuxtImg src="/MacStep2.png" alt="Step 2" />
           </div>
         </ClientOnly>
 
@@ -78,9 +78,6 @@ onMounted(() => {
         <p class="text-sm leading-7 text-gray-400">
           &copy; Texitor. All rights reserved.
         </p>
-        <div
-          class="hidden sm:block sm:h-7 sm:w-px sm:flex-none sm:bg-gray-200"
-        />
       </div>
     </footer>
   </div>

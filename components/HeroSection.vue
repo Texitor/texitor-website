@@ -71,7 +71,7 @@ const mobileMenuOpen = ref(false);
 
 const handlePostDownload = () => {
   setTimeout(() => {
-    window.location.href = "/postdownload";
+    window.location.href = "/post-download";
   }, 1000);
 };
 </script>
@@ -260,6 +260,7 @@ const handlePostDownload = () => {
                 width="2432"
                 height="1442"
                 class="rounded-md shadow-2xl ring-1 ring-gray-900/10"
+                fit="inside"
               />
             </div>
           </div>
