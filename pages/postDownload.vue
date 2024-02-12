@@ -15,7 +15,13 @@ onMounted(() => {
 <template>
   <div class="bg-white min-h-screen">
     <main class="mx-auto w-full max-w-7xl px-6 pb-16 pt-10 sm:pb-24 lg:px-8">
-      <img class="mx-auto h-10 w-auto sm:h-12" src="/logo.png" alt="Texitor" />
+      <NuxtImg
+        class="mx-auto sm:h-12"
+        height="32"
+        width="32"
+        src="/logo.png"
+        alt="Texitor Logo"
+      />
       <div class="mx-auto mt-20 max-w-2xl text-center sm:mt-24">
         <!-- <p class="text-base font-semibold leading-8 text-indigo-600">
           Success!
