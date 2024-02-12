@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxt/ui"],
+  modules: ["@nuxt/ui", "@nuxt/image"],
   app: {
     head: {
       charset: "utf-8",
@@ -19,5 +19,8 @@ export default defineNuxtConfig({
         { name: "author", content: "Texitor" },
       ],
     },
+  },
+  image: {
+    format: ["webp"],
   },
 });
