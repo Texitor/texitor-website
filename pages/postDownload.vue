@@ -43,6 +43,18 @@ onMounted(() => {
             <img src="/WinStep2.png" alt="Step 2" />
             <img src="/WinStep3.png" alt="Step 3" />
           </div>
+          <div
+            v-else-if="platform === 'macOS'"
+            class="w-full flex flex-col gap-4"
+          >
+            <h2
+              class="text-indigo-500 font-semibold border-b pb-3 border-dashed"
+            >
+              Steps for downloading on MacOS:
+            </h2>
+            <img src="/MacStep1.png" alt="Step 1" />
+            <img src="/MacStep2.png" alt="Step 2" />
+          </div>
         </ClientOnly>
 
         <div class="mt-10 flex justify-center">
