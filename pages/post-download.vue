@@ -15,7 +15,7 @@ onMounted(() => {
 <template>
   <div class="bg-white min-h-screen">
     <main class="mx-auto w-full max-w-7xl px-6 pb-16 pt-10 sm:pb-24 lg:px-8">
-      <NuxtImg
+      <img
         class="mx-auto"
         height="48"
         width="48"
